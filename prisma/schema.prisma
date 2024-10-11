@@ -41,8 +41,8 @@ model Item {
 
 model Transaction {
   id Int @id @default(autoincrement())
-  ItemId Int
   userId Int
+  itemId Int
   quantityBorrowed Int
   borrowedAt DateTime @default(now())
   returnedAt DateTime?
@@ -50,7 +50,7 @@ model Transaction {
 
   user User @relation(fields: [userId], references: [id])
 
-  item Item @relation(fields: [ItemId], references: [id])
+  item Item @relation(fields: [itemId], references: [id])
 }
 
 enum TransactionStatus {
