@@ -24,7 +24,7 @@ async function getUserById(id) {
 }
 
 async function editUserById(id, userData) {
-    if(!userData.password){
+    if(userData.password){
         const hashedPassword = await bcrypt.hash(userData.password, 10);
         userData.password = hashedPassword;
     }

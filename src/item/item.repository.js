@@ -55,7 +55,7 @@ async function updateItemQuantity(itemId, newQuantity) {
         data: {
             quantity: newQuantity,
         }
-    })
+    });
 }
 
 module.exports = {
@@ -64,5 +64,5 @@ module.exports = {
     findItemById,
     editItem,
     deleteItem,
-    updateItemQuantity
+    updateItemQuantity  
 }
