@@ -11,8 +11,6 @@ const app = express();
 // Load environment variables
 dotenv.config();
 
-// Set the port from the environment variables
-const PORT = process.env.PORT;
 
 // Middleware setup
 app.use(express.json());
@@ -34,8 +32,4 @@ app.use("/api/users", adminAuthorization, userController);
 app.use("/api/items", itemController);
 app.use("/api/transactions", transactionController);
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
-    
+export default app;
